@@ -1,0 +1,10 @@
+torch==2.14.1
+transformers==5.18.0
+librosa==1.0.0  # needed by the model's feature extractor
+fastapi==0.142.2
+uvicorn[standard]==0.54.0
+python-multipart==0.0.32
+gradio==6.29.1
+numpy==2.5.3
+matplotlib==3.11.2
+pandas==3.0.6

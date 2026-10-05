@@ -1,0 +1,17 @@
+services:
+  diarization:
+    build: .
+    image: nemotron3-diarization:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_ID=nvidia/Nemotron-3-Diarization
+      - DEVICE=auto        # auto | cuda | cpu
+      - DTYPE=float32      # float32 | bfloat16 | float16
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
